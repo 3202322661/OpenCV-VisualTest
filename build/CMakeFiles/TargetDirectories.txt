@@ -1,0 +1,3 @@
+/home/liumingyuan/visual/build/CMakeFiles/visual.dir
+/home/liumingyuan/visual/build/CMakeFiles/edit_cache.dir
+/home/liumingyuan/visual/build/CMakeFiles/rebuild_cache.dir

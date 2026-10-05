@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "cmake-configure",
+            "command": "bash",
+            "args": [
+                "-c",
+                "cmake -S \"${workspaceFolder}\" -B \"${workspaceFolder}/build\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "配置整个 CMake 工程（生成 build/ 目录）"
+        },
+        {
+            "type": "shell",
+            "label": "cmake-build",
+            "command": "bash",
+            "args": [
+                "-c",
+                "cmake -S \"${workspaceFolder}\" -B \"${workspaceFolder}/build\" && cmake --build \"${workspaceFolder}/build\" -j"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "配置并构建整个工程（自动编译 src/ 下所有源文件，输出 build/visual）"
+        },
+        {
+            "type": "shell",
+            "label": "run-opencv",
+            "dependsOn": "cmake-build",
+            "command": "bash",
+            "args": [
+                "-c",
+                "env -u GTK_PATH -u GTK_EXE_PREFIX -u GTK_IM_MODULE_FILE -u GTK_MODULES -u GDK_PIXBUF_MODULE_FILE -u GDK_PIXBUF_MODULEDIR -u GIO_MODULE_DIR -u GSETTINGS_SCHEMA_DIR -u LOCPATH \"${workspaceFolder}/build/visual\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
