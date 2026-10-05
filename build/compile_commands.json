@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/liumingyuan/visual/build",
-  "command": "/usr/bin/c++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/visual.dir/src/test.cpp.o -c /home/liumingyuan/visual/src/test.cpp",
-  "file": "/home/liumingyuan/visual/src/test.cpp",
-  "output": "CMakeFiles/visual.dir/src/test.cpp.o"
-}
-]
